@@ -1,0 +1,29 @@
+name: On Push
+on:
+  push:
+    branches: [main]
+    tags-ignore: ['**']
+  workflow_dispatch:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+    - name: Install Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '16'
+    - name: Build
+      run: |
+        npm ci
+        npm test
+        npx gulp bundle
+    - name: Release
+      uses: marvinpinto/action-automatic-releases@v1.2.1
+      with:
+        repo_token: ${{ secrets.GITHUB_TOKEN }}
+        automatic_release_tag: latest
+        prerelease: true
+        title: Development Build
+        files: build/ui-bundle.zip
