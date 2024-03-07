@@ -1,0 +1,130 @@
+antoraVersion: '3.1.2'
+asciidoc:
+  extensions:
+  # TIP uncomment the next line to switch to Asciidoctor Tabs
+  - '@asciidoctor/tabs'
+  - '@springio/asciidoctor-extensions'
+site:
+  url: http://localhost:5252
+  title: Spring
+  homeUrl: /index.html
+  components:
+  - name: security
+    title: &component_title Spring Security
+    url: '#'
+    versions: &security_versions
+    - &security_latest_version
+      url: '/index.html'
+      version: '6.1.5'
+      displayVersion: '6.1.5'
+      title: *component_title
+      versionSegment: '5.6'
+    - &security_5_5_version
+      url: '/5.5/index.html'
+      version: '5.5.9'
+      displayVersion: '5.5.9'
+      versionSegment: '5.5'
+    latest: *security_latest_version
+  - name: session
+    title: &session_component_title Spring Session
+    url: '#'
+    versions:
+      - &session_latest_version
+        url: '/session/index.html'
+        version: '2.5.9'
+        displayVersion: '2.5.9'
+        title: *session_component_title
+        versionSegment: '2.5'
+    latest: *session_latest_version
+shared:
+  security:
+    5.5.9:
+      home: true
+      title: Spring Security
+      relativeSrcPath: index.adoc
+      editUrl: http://example.com/project-xyz/blob/master/index.adoc
+      component:
+        title: Spring Security
+        url: '#'
+        versions:
+          - url: '/index.html'
+            version: '6.1.5'
+            displayVersion: '6.1.5'
+            title: *component_title
+            versionSegment: '5.6'
+          - url: '/5.5/index.html'
+            version: '5.5.9'
+            displayVersion: '5.5.9'
+            versionSegment: '5.5'
+      componentVersion: *security_5_5_version
+      versions:
+        - version: '6.1.5'
+          displayVersion: '6.1.5'
+          url: '#'
+          versionSegment: ''
+        - version: '5.5.9'
+          displayVersion: '5.5.9'
+          versionSegment: '5.5'
+          url: '#'
+      navigation:
+        - root: true
+          items:
+            - content: Overview
+              url: '/5.5/index.html'
+            - content: Features
+              url: '#'
+              items:
+                - content: Authentication
+                  url: '#'
+                - content: Protection Against Exploits
+                  url: '#'
+    6.1.5:
+      home: true
+      title: Spring Security
+      relativeSrcPath: index.adoc
+      editUrl: http://example.com/project-xyz/blob/master/index.adoc
+      component:
+        title: &component_title Spring Security
+        url: '#'
+        versions: *security_versions
+      componentVersion: *security_latest_version
+      versions:
+        - version: '6.1.5'
+          displayVersion: '6.1.5'
+          url: '#'
+          versionSegment: ''
+        - version: '5.5.9'
+          displayVersion: '5.5.9'
+          url: '#'
+          versionSegment: '5.5'
+      navigation:
+        - root: true
+          items:
+            - content: Overview
+              url: '/index.html'
+            - content: Features
+              url: '/features/index.html'
+              items:
+                - content: Authentication
+                  url: '/features/authentication/index.html'
+                - content: Protection Against Exploits
+                  url: '/features/exploits/index.html'
+  session:
+    2.5.9:
+      home: true
+      title: Spring Session
+      relativeSrcPath: index.adoc
+      editUrl: http://example.com/project-xyz/blob/master/index.adoc
+      component:
+        title: Spring Session
+        url: '#'
+        versions:
+          - *session_latest_version
+      componentVersion: *session_latest_version
+      navigation:
+        - root: true
+          items:
+            - content: Session
+              url: '/session/index.html'
+            - content: Features
+              url: '#'

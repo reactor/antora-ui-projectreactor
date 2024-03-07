@@ -1,0 +1,76 @@
+.theme-toggler {
+  display: inline-block;
+  height: 10px;
+  width: 36px;
+  background: #d7e7e7;
+  align-self: center;
+  position: relative;
+  border-radius: 5px;
+  font-size: 13px;
+  margin-right: 1rem;
+  margin-left: 5px;
+  cursor: pointer;
+}
+.theme-toggler input {
+  opacity: 0;
+}
+.theme-toggler .moon {
+  display: none;
+}
+.theme-toggler span.text {
+  display: block;
+  overflow: hidden;
+  text-indent: -6000em;
+  background-color: transparent;
+}
+.theme-toggler span.icon {
+  position: absolute;
+  top: -7px;
+  left: -1px;
+  display: block;
+  background: black;
+  color: white;
+  width: 24px;
+  height: 24px;
+  border-radius: 12px;
+  transition: left 0.5s;
+}
+.theme-toggler span.icon svg {
+  overflow: visible;
+  box-sizing: content-box;
+  height: 1em;
+}
+.theme-toggler span.icon .moon {
+  margin-left: 7px;
+  margin-top: 5px;
+}
+.theme-toggler span.icon .sun {
+  margin-left: 5px;
+  margin-top: 5px;
+}
+
+.theme-toggler.active {
+  background: #41464b;
+}
+
+.theme-toggler.active span.icon {
+  background: white;
+  color: black;
+  left: 14px;
+}
+
+.theme-toggler.active span.icon .sun {
+  display: none;
+}
+
+.theme-toggler.active span.icon .moon {
+  display: block;
+}
+
+@media screen and (max-width: 1024px) {
+  .theme-toggler {
+    position: absolute;
+    right: 0;
+    top: 90px;
+  }
+}

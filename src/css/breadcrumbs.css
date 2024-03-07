@@ -1,0 +1,42 @@
+.breadcrumbs {
+  margin: 2.5rem 0 0;
+  max-width: var(--doc-max-width);
+  flex: 1 1;
+  padding: 0;
+  line-height: var(--nav-line-height);
+  color: var(--doc-font-color);
+  font-family: var(--font-family);
+  font-size: calc(16 / var(--rem-base) * 1rem);
+}
+
+@media screen and (min-width: 1024px) {
+  .breadcrumbs {
+    max-width: var(--doc-max-width--desktop);
+    min-width: 0;
+  }
+}
+
+a + .breadcrumbs {
+  padding-left: 0.05rem;
+}
+
+.breadcrumbs ul {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  padding: 0;
+}
+
+.breadcrumbs li {
+  display: inline;
+  margin: 0;
+}
+
+.breadcrumbs li::after {
+  content: "/";
+  padding: 0 0.5rem;
+}
+
+.breadcrumbs li:last-of-type::after {
+  content: none;
+}

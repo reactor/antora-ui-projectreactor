@@ -1,0 +1,397 @@
+.nav-container {
+  position: fixed;
+  top: var(--navbar-height);
+  left: 0;
+  width: 100%;
+  font-size: calc(17 / var(--rem-base) * 1rem);
+  z-index: var(--z-index-nav);
+  visibility: hidden;
+}
+
+.nav-container.is-active {
+  visibility: visible;
+}
+
+.nav {
+  background: var(--nav-background);
+  position: relative;
+  top: var(--toolbar-height);
+  height: var(--nav-height);
+  border: 0 none;
+}
+
+.nav .panels {
+  display: flex;
+  flex-direction: column;
+  height: inherit;
+}
+
+html.is-clipped--nav {
+  /* overflow-y: hidden; */
+}
+
+.nav-panel-menu {
+  overflow-y: auto;
+  height: var(--nav-panel-menu-height);
+}
+
+.nav-panel-menu:not(.is-active) .nav-menu {
+  opacity: 0.75;
+}
+
+.nav-panel-menu:not(.is-active)::after {
+  content: "";
+  background: rgba(0, 0, 0, 0.5);
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.nav-menu {
+  min-height: 100%;
+  /* padding: 0.5rem 0.75rem; */
+  padding-right: 2px;
+  line-height: var(--nav-line-height);
+  position: relative;
+}
+
+.nav-menu h3.title {
+  color: var(--nav-heading-font-color);
+  font-size: inherit;
+  font-weight: bold;
+  margin: 0;
+  padding: 0.25rem 0 0.4rem 0;
+}
+
+.nav-menu a {
+  color: inherit;
+}
+
+.nav-list {
+  margin: 0;
+  padding: 0 1rem;
+}
+
+.nav-menu > .nav-list .nav-list {
+  padding: 0;
+  margin: 0 0 0 0.75rem;
+}
+
+.nav-menu > .nav-list + .nav-list {
+  margin-top: 0.5rem;
+}
+
+.nav-item {
+  position: relative;
+  list-style: none;
+}
+
+/* adds some breathing room below a nested list */
+.nav-item-toggle ~ .nav-list {
+  padding-bottom: 0.125rem;
+}
+
+/* matches list without a title */
+.nav-item[data-depth="0"] > .nav-list:first-child {
+  display: block;
+  margin: 0;
+}
+
+.nav-item:not(.is-active) > .nav-list {
+  display: none;
+}
+
+.nav-item-toggle {
+  background: transparent url(../img/chevron.svg) no-repeat center / 50%;
+  border: none;
+  outline: none;
+  line-height: inherit;
+  position: absolute;
+  height: calc(var(--nav-line-height) * 1.5em);
+  width: calc(var(--nav-line-height) * 1.5em);
+  margin-top: 2px;
+  margin-left: calc(var(--nav-line-height) * -1em);
+  right: 2px;
+  transform: rotate(-90deg);
+}
+
+.dark-theme .nav-item-toggle {
+  background: transparent url(../img/chevron-white.svg) no-repeat center / 50%;
+  filter: opacity(75%);
+}
+
+.nav-item.is-current-page > .nav-item-toggle {
+  background: transparent url(../img/chevron-white.svg) no-repeat center / 50%;
+  transform: rotate(0deg);
+  filter: opacity(75%);
+}
+
+.dark-theme .nav-item.is-current-page > .nav-item-toggle {
+  background: transparent url(../img/chevron.svg) no-repeat center / 50%;
+}
+
+.nav-item.is-active > .nav-item-toggle {
+  transform: rotate(0deg);
+}
+
+.dark-theme .nav-item.is-active > .nav-item-toggle {
+  transform: rotate(0deg);
+}
+
+.nav-link,
+.nav-text {
+  display: block;
+  padding: 0.4rem 0.5rem;
+  border-radius: 3px;
+  padding-right: 28px;
+}
+
+.nav-link:hover,
+.nav-text:hover {
+  text-decoration: none;
+  background: #ebf2f2;
+  color: #06c;
+}
+
+.dark-theme .nav-link:hover,
+.dark-theme .nav-text:hover {
+  color: #1f98ff;
+  background: #262a2d;
+}
+
+.is-current-page > .nav-link,
+.is-current-page > .nav-text,
+.is-current-page > .nav-link:hover,
+.is-current-page > .nav-text:hover {
+  font-weight: var(--body-font-weight-bold);
+  background: var(--selected-background-color);
+  color: var(--toc-active-font-color);
+}
+
+.nav-panel-menu .context {
+  padding: 0.8rem 1rem;
+}
+
+.nav-panel-menu .context .title {
+  font-weight: bold;
+  display: block;
+  height: 24px;
+  line-height: 24px;
+  padding-right: 30px;
+  margin-bottom: 4px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+button.browse-version {
+  border: none;
+  outline: none;
+  line-height: inherit;
+  position: absolute;
+  background-color: var(--body-background-color);
+  height: calc(var(--nav-line-height) * 1.5em);
+  width: 36px;
+  margin-left: calc(var(--nav-line-height) * -1em);
+  right: 12px;
+  top: 15px;
+  border-radius: 4px;
+  padding-top: 4px;
+}
+
+button.browse-version svg {
+  fill: var(--body-font-color);
+}
+
+button.browse-version:hover {
+  background-color: #ebf2f2;
+}
+
+html.dark-theme button.browse-version:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.nav-panel-menu .context .version {
+  display: inline-block;
+  background-color: #80ea6e;
+  color: #111;
+  align-items: center;
+  border-radius: 4px;
+  font-size: calc(12 / var(--rem-base) * 1rem);
+  justify-content: center;
+  padding: 0.25em 0.75em;
+  white-space: nowrap;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.navbar-project {
+  line-height: 74px;
+  font-size: calc(22 / var(--rem-base) * 1rem);
+}
+
+.navbar-brand .title-divider {
+  line-height: 74px;
+  font-weight: bold;
+  color: var(--color-gray-10);
+  margin: 0 0.8rem;
+}
+
+.navbar-brand .page-versions {
+  display: inline-block;
+  margin-left: -0.5rem;
+}
+
+.nav-menu .search {
+  position: relative;
+  border: 0 none;
+  height: 44px;
+  display: none;
+  margin-bottom: 0.5rem;
+}
+
+.nav-resize {
+  position: absolute;
+  top: 0;
+  right: -2px;
+  bottom: 0;
+  z-index: 9999;
+  width: 4px;
+  cursor: ew-resize;
+  user-select: none;
+  border-left: 1px solid var(--nav-panel-divider-color);
+}
+
+.nav-collapse {
+  background: var(--panel-background-color);
+  height: 40px;
+  margin-right: 2px;
+  border-top: 1px solid var(--nav-panel-divider-color);
+  position: relative;
+  display: none;
+}
+
+.nav-collapse button {
+  border: none;
+  outline: none;
+  line-height: inherit;
+  position: absolute;
+  height: calc(var(--nav-line-height) * 1.5em);
+  width: calc(var(--nav-line-height) * 1.5em);
+  margin-top: 2px;
+  margin-left: calc(var(--nav-line-height) * -1em);
+  right: 8px;
+  top: 2px;
+  padding: 0;
+  background-color: transparent;
+}
+
+.nav-collapse button span {
+  display: block;
+  height: calc(var(--nav-line-height) * 1.5em);
+  width: calc(var(--nav-line-height) * 1.5em);
+  background: transparent url(../img/chevron.svg) no-repeat center / 50%;
+  transform: rotate(90deg);
+}
+
+.dark-theme .nav-collapse button span {
+  background: transparent url(../img/chevron-white.svg) no-repeat center / 50%;
+  filter: opacity(75%);
+}
+
+@media screen and (min-width: 1024px) {
+  body.nav-sm .nav-container {
+    width: 60px;
+  }
+
+  body.nav-sm .nav-collapse,
+  body.nav-sm .nav-menu {
+    margin-right: 0;
+    padding-right: 0;
+  }
+
+  body.nav-sm .DocSearch-Button svg {
+    left: 20px;
+  }
+
+  body.nav-sm .nav-collapse button span {
+    transform: rotate(-90deg);
+  }
+
+  body.nav-sm .nav-menu .search {
+    margin-bottom: 0;
+  }
+
+  body.nav-sm .nav-panel-menu .context {
+    height: 50px;
+  }
+
+  body.nav-sm .nav-panel-menu .context .title,
+  body.nav-sm .nav-panel-menu .context .version,
+  body.nav-sm .nav-resize,
+  body.nav-sm .DocSearch-Button span {
+    display: none;
+  }
+
+  html.is-clipped--nav body.nav-sm .nav-menu > .nav-list {
+    display: block;
+  }
+  body.nav-sm .nav-menu > .nav-list {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 61px;
+    padding: 0.5rem 1rem;
+    width: 300px;
+    bottom: -40px;
+    background: var(--body-background-color);
+    border-right: 1px solid var(--nav-panel-divider-color);
+  }
+
+  body.nav-sm .toggle-sm button.nav-toggle {
+    display: block;
+    margin-left: 10px;
+  }
+}
+
+body.nav-sm .nav-panel-menu {
+  overflow: visible;
+}
+
+@media screen and (min-width: 769px) {
+  .nav-container {
+    width: var(--nav-width);
+  }
+  .nav {
+    box-shadow: 0.5px 0 3px var(--nav-border-color);
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .nav-container {
+    font-size: calc(14 / var(--rem-base) * 1rem);
+    flex: none;
+    position: static;
+    top: 0;
+    visibility: visible;
+  }
+
+  .nav-collapse {
+    display: block;
+  }
+
+  .nav-menu .search {
+    display: block;
+  }
+
+  .nav {
+    top: var(--navbar-height);
+    box-shadow: none;
+    position: sticky;
+    height: var(--nav-height--desktop);
+    border-right: 1px solid var(--nav-panel-divider-color);
+  }
+}

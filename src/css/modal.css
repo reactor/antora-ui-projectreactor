@@ -1,0 +1,132 @@
+.modal__overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(235, 242, 242, 0.8);
+  z-index: 999;
+}
+
+.modal__container {
+  background-color: var(--body-background-color);
+  width: 100%;
+  margin: 0 auto;
+  height: auto;
+}
+
+.modal__content {
+  line-height: 1.5;
+  color: rgba(0, 0, 0, 0.8);
+}
+
+.modal__title {
+  padding: 0.5rem 0.8rem;
+  position: relative;
+}
+
+.modal__close {
+  position: absolute;
+  right: 10px;
+  top: 16px;
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+}
+
+.modal__close:hover::before,
+.modal__close:hover::after {
+  background-color: var(--color-accent-3);
+}
+
+.modal__close::before,
+.modal__close::after {
+  position: absolute;
+  left: 15px;
+  content: " ";
+  height: 18px;
+  width: 2px;
+  background-color: #333;
+}
+.modal__close::before {
+  transform: rotate(45deg);
+}
+.modal__close::after {
+  transform: rotate(-45deg);
+}
+
+@keyframes mmfadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes mmfadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes mmslideIn {
+  from {
+    transform: translateY(15%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes mmslideOut {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-10%);
+  }
+}
+
+.micromodal-slide {
+  display: none;
+}
+
+.micromodal-slide.is-open {
+  display: block;
+}
+
+.micromodal-slide[aria-hidden="false"] .modal__overlay {
+  animation: mmfadeIn 0.3s cubic-bezier(0, 0, 0.2, 1);
+}
+
+.micromodal-slide[aria-hidden="false"] .modal__container {
+  animation: mmslideIn 0.3s cubic-bezier(0, 0, 0.2, 1);
+}
+
+.micromodal-slide[aria-hidden="true"] .modal__overlay {
+  animation: mmfadeOut 0.3s cubic-bezier(0, 0, 0.2, 1);
+}
+
+.micromodal-slide[aria-hidden="true"] .modal__container {
+  animation: mmslideOut 0.3s cubic-bezier(0, 0, 0.2, 1);
+}
+
+.micromodal-slide .modal__container,
+.micromodal-slide .modal__overlay {
+  will-change: transform;
+}
+
+@media screen and (min-width: 1024px) {
+  .modal__overlay {
+    padding: 3rem;
+  }
+  .modal__container {
+    max-width: 600px;
+    min-width: 50%;
+    width: auto;
+  }
+}
