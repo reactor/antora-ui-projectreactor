@@ -2,4 +2,23 @@
 #reactorlogo-footer {
   height: 45px;
   max-width: 250px;
+  display: block;
+}
+
+#reactorlogo-dark,
+#reactorlogo-footer-dark {
+  height: 45px;
+  max-width: 250px;
+  display: none;
+}
+
+html.dark-theme #reactorlogo-dark,
+html.dark-theme #reactorlogo-footer-dark {
+  display: block;
+}
+
+
+html.dark-theme #reactorlogo,
+html.dark-theme #reactorlogo-footer {
+  display: none;
 }
