@@ -55,7 +55,11 @@
 
 footer #social-icons {
   flex-shrink: 0;
-  width: 160px;
+  width: 120px;
+}
+
+footer #spring-links {
+  flex: 1;
 }
 
 footer #social-icons a {
