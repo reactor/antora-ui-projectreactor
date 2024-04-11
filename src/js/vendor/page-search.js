@@ -139,7 +139,7 @@
     const { query, refine, clear, isSearchStalled, widgetParams } = renderOptions
     if (isFirstRender) {
       input.classList.add('ais-SearchBox-input')
-      input.placeholder = 'Search in all Spring Documentation'
+      input.placeholder = 'Search in all Reactor Documentation'
       const loadingIndicator = document.createElement('span')
       loadingIndicator.textContent = 'Loading...'
       const button = document.createElement('button')
