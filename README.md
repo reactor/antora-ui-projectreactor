@@ -1,11 +1,7 @@
 
-<p align="center">
-  <a href="https://www.spring.io/">
-    <img alt="Spring" src="https://spring.io/img/spring-2.svg" width="250" />
-  </a>
-</p>
+# Project Reactor
 
-[![On Push](https://github.com/spring-io/antora-ui-spring/actions/workflows/push.yml/badge.svg?branch=main)](https://github.com/spring-io/antora-ui-spring/actions/workflows/push.yml)
+[![On Push](https://github.com/reactor/antora-ui-projectreactor/actions/workflows/push.yml/badge.svg?branch=main)](https://github.com/reactor/antora-ui-projectreactor/actions/workflows/push.yml)
 
 
 This project generates and packages the static resources that Spring uses for document production.
