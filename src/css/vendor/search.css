@@ -12,7 +12,7 @@
   color: var(--body-font-color);
   background: var(--body-background-color);
   text-align: left;
-  padding-left: 35px;
+  padding-left: 40px;
   border: 1px solid var(--nav-panel-divider-color);
   border-left-width: 0;
   border-right-width: 0;
@@ -67,7 +67,7 @@
 .DocSearch-Button svg {
   position: absolute;
   top: 10px;
-  left: 10px;
+  left: 15px;
   width: 20px;
   fill: var(--body-font-color);
 }
@@ -294,6 +294,10 @@ a.ais-Hits-item:hover {
   border-color: var(--nav-panel-divider-color);
 }
 
+.dark-theme .search-link-box .search-link {
+  color: white;
+}
+
 .dark-theme #nomore {
   border-color: var(--nav-panel-divider-color);
   color: #fff;
@@ -329,5 +333,9 @@ a.ais-Hits-item:hover {
   .DocSearch-Button {
     border-left-width: 1px;
     border-right-width: 1px;
+    padding-left: 35px;
+  }
+  .DocSearch-Button svg {
+    left: 10px;
   }
 }

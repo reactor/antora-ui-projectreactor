@@ -48,6 +48,7 @@
   --scrollbar-thumb-color: silver;
   --mark-background-color: #80ea6e;
   --selected-background-color: #191e1e;
+  --caption-font-style: italic;
 
   /* Layout */
   --layout-banner-height: 80px;
@@ -127,7 +128,7 @@
 
   /* Navbar */
   --navbar-background: var(--body-background-color);
-  --navbar-font-color: #var(--body-font-color);
+  --navbar-font-color: var(--body-font-color);
   --navbar_hover-background: var(--navbar-background);
   --navbar-button-background: var(--color-white);
   --navbar-button-border-color: var(--panel-border-color);
@@ -223,7 +224,7 @@
   --z-index-nav: 1;
   --z-index-toolbar: 2;
   --z-index-page-version-menu: 3;
-  --z-index-navbar: 4;
+  --z-index-navbar: 100;
 }
 
 /* RESPONSIVE OVERRIDES */
