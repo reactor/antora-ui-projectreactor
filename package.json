@@ -72,6 +72,7 @@
   "dependencies": {
     "@algolia/client-search": "^4.17.0",
     "@primer/octicons": "^19.8.0",
+    "hotkeys-js": "^4.0.0-beta.6",
     "init": "^0.1.2"
   }
 }

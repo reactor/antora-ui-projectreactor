@@ -27,7 +27,8 @@
   }
 }
 
-a + .breadcrumbs {
+a + .breadcrumbs,
+button + .breadcrumbs {
   padding-left: 0.05rem;
 }
 
@@ -51,4 +52,29 @@ a + .breadcrumbs {
 
 .breadcrumbs li:last-of-type::after {
   content: none;
+}
+
+#copy-url {
+  content: "";
+  filter: var(--codetools-button-filter);
+  background-image: url(../img/url.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
+  vertical-align: middle;
+  display: inline-block;
+}
+
+#copy-url.copied {
+  background-image: url(../img/octicons-16.svg#view-copy);
+}
+
+#copy-url::after {
+  content: none;
+}
+
+#copy-url:hover {
+  cursor: pointer;
 }
