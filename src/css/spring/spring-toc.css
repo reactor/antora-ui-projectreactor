@@ -38,6 +38,7 @@ body.toc-left #doc {
 
 #toc ul,
 #toc ol {
+  display: none;
   padding: 0;
 }
 
